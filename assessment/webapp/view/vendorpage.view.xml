@@ -1,0 +1,13 @@
+<mvc:View controllerName="assessment.controller.vendorpage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="Vendor Detail Page" showNavButton="true" navButtonPress="onNavigationBack">
+
+ <List headerText=" List of Vendors" 
+     id = "vendors"
+    items= "{vendorDetailModel>/}">
+    <StandardListItem title="{vendorDetailModel>vendorId}"  description="{vendorDetailModel>vendorName}"
+    highlight="Success"/>
+    </List>
+    </Page>
+</mvc:View>

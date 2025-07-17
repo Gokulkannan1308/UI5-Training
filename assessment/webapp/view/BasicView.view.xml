@@ -1,0 +1,36 @@
+<mvc:View controllerName="assessment.controller.BasicView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Table id="Material" items="{material>/}" mode="SingleSelectLeft">
+    <columns>
+    <Column width="10rem">
+        <Text text="Material ID"/>
+     </Column>
+     <Column>
+        <Text text="Material Name"/>
+     </Column>
+     <Column>
+        <Text text="Description"/>
+     </Column>
+     <Column>
+        <Text text="Unit of Measure"/>
+     </Column>
+     <!-- <Column>
+        <Text text="Current Stock"/>
+     </Column> -->
+     </columns>
+      <items>
+       <ColumnListItem type="Navigation" press="onMaterialClick">
+        <cells>
+        <Text text="{material>materialId}"/>
+        <Text text="{material>materialName}"/>
+        <Text text="{material>description}"/>
+        <Text text="{material>unitOfMeasure}"/>
+        <!-- <ObjectStatus text="{material>current_stock}" state="{=${material>current_stock} >= '500' ? 'Success' : 'Error'}"/> -->
+        </cells>
+        </ColumnListItem>
+    </items>
+    </Table>
+    </Page>
+</mvc:View>
