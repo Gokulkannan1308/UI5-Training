@@ -1,0 +1,107 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "demo.ladera.demoproductlist",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.1",
+      "toolsId": "a1233494-4405-4de0-b511-15f6efee4807"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "demo.ladera.demoproductlist.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "demo.ladera.demoproductlist.view",
+        "async": true,
+        "viewPath": "demo.ladera.demoproductlist.view"
+      },
+      "routes": [
+        {
+          "name": "Routeproductview",
+          "pattern": ":?query:",
+          "target": [
+            "Targetproductview"
+          ]
+        },
+        {
+          "name": "productDetail",
+          "pattern": "productDetail/{productIndex}",
+          "target": ["secondView"]
+        }
+      ],
+      "targets": {
+        "Targetproductview": {
+          "id": "productview",
+          "name": "productview"
+        },
+        "secondView" : {
+          "id" : "productDetail",
+          "name" : "productDetail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "demo.ladera.demoproductlist.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

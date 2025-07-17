@@ -1,0 +1,18 @@
+<mvc:View controllerName="demo.ladera.demoproductlist.controller.productDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Page id="productDetail" title="Product Detail Page" showNavButton="true" navButtonPress="onNavigationBack">
+     <f:SimpleForm >
+        <f:content>
+            <Label text="Product Name"/>
+            <Input value="{productDetailModel>/ProductName}" editable="false"/>
+            <Label text="Product Description"/>
+            <Input value="{productDetailModel>/ProductDescription}" editable="false"/>
+            <Label text="Location"/>
+            <Input value="{productDetailModel>/Location}" editable="false"/>
+            <Label text="Cost Center"/>
+            <Input value="{productDetailModel>/CostCenter}" editable="false"/>
+        </f:content>
+    </f:SimpleForm>
+    </Page>
+</mvc:View>

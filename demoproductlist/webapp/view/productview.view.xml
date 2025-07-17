@@ -1,0 +1,61 @@
+<mvc:View controllerName="demo.ladera.demoproductlist.controller.productview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Table id="Product" items="{/Products}" mode="SingleSelectLeft">
+    <headerToolbar>
+         <Toolbar>
+            <content>
+            <Title text="Product Table"/>
+            <ToolbarSpacer/>
+            <!-- <SearchField width="20%"   
+            liveChange="onSearchProducts" 
+            change="SearchOnEnter"/> -->
+            <SearchField width="20%"
+            change="SearchOnEnter"/>
+            <Button icon="sap-icon://sort" press="onSortPress"/>
+            <Button icon="sap-icon://add" press="onaddproduct"/>
+            <Button icon="sap-icon://edit" press="oneditproduct"/>
+               
+            </content>
+         </Toolbar>
+      </headerToolbar>
+    <columns>
+    <Column width="10rem">
+        <Text text="Product Id"/>
+     </Column>
+     <Column>
+        <Text text="Product Name"/>
+     </Column>
+     <Column>
+        <Text text="Product Description"/>
+     </Column>
+     <Column>
+        <Text text="Location"/>
+     </Column>
+     <Column>
+        <Text text="Cost Center"/>
+     </Column>
+     <Column>
+        <Text text="Status"/>
+     </Column>
+     <Column>
+        <Text text="Delete"/>
+     </Column>
+    </columns>
+    <items>
+        <ColumnListItem type="Navigation" press="onProductRowPress">
+        <cells>
+        <Text text="{ProductId}"/>
+        <Text text="{ProductName}"/>
+        <Text text="{ProductDescription}"/>
+        <Text text="{Location}"/>
+        <Text text="{CostCenter}"/>
+        <ObjectStatus text ="{Status}" state="{=${Status} === 'Active' ? 'Success' : 'Error'}"/>
+        <Button icon = "sap-icon://delete" press="ondeleteproduct"/> 
+        </cells>
+        </ColumnListItem>
+    </items>
+    </Table>
+    </Page>
+</mvc:View>
